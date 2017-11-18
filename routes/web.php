@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('chat');
-});
+
+Auth::routes();
+
+Route::get('/', 'CommentController@index');
+
+Route::get('/send', 'CommentController@send');
+
+
+

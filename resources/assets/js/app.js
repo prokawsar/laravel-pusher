@@ -16,10 +16,17 @@ const app = new Vue({
     },
     methods: {
         send(){
+            if(this.message === "clear"){ //clearing messages just for comfort
+                this.chat.message = []
+                this.message = ''
+                return
+            }
+
             if(this.message != 0){
                 this.chat.message.push(this.message);
                 this.message = ''
             }
+            
         }
     }
 });
