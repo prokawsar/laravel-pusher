@@ -11,12 +11,8 @@
 |
 */
 
-
 Auth::routes();
 
 Route::get('/', 'CommentController@index');
 
 Route::get('/send', 'CommentController@send');
-
-
-
