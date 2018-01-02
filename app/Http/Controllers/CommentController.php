@@ -19,7 +19,8 @@ class CommentController extends Controller
         return view('chat');
     }
 
-    public function send(request $request){
+    public function send(request $request)
+    {
         $user = User::find(Auth::id());
         event(new CommentEvent($request->message, $user));
     }
