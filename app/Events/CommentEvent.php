@@ -27,7 +27,7 @@ class CommentEvent implements ShouldBroadcast
         $this->message = $message;
 
         $this->user = $user;
-        $this->time = "Time";
+        $this->time = 'Time';
         $this->dontBroadcastToCurrentUser();
     }
 
