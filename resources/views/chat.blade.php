@@ -8,6 +8,7 @@
 
             <ul class="list-group col-md-6">
                 <li class="list-group-item active text-center">Chat/Comment/Notification</li>
+                
                 <component 
                 v-for="value in chat.message"
                 :key=this.index
@@ -15,6 +16,7 @@
                 >
                     @{{ value }}
                 </component>
+
                 <input type="text" class="form-control" name="" placeholder="Type your message..." 
                 v-model='message' 
                 @keyup.enter='send'

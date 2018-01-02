@@ -15,6 +15,7 @@ class CommentEvent implements ShouldBroadcast
 
     public $message;
     public $user;
+    public $time;
 
     /**
      * Create a new event instance.
@@ -23,9 +24,11 @@ class CommentEvent implements ShouldBroadcast
      */
     public function __construct($message, User $user)
     {
-        return $this->message = $message;
+        $this->message = $message;
 
-        return $this->user = $user;
+        $this->user = $user;
+        $this->time = "Time";
+        $this->dontBroadcastToCurrentUser();
     }
 
     /**

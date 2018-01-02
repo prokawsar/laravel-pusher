@@ -1,6 +1,8 @@
 <template>
     <div>
-        <li class="list-group-item" :class="className"><slot></slot></li>
+        <li class="list-group-item" :class="className">
+            <slot></slot>
+        </li>
         <small class="badge float-right">You</small>
     </div>
 </template>
@@ -16,7 +18,7 @@
             }
         },
         mounted() {
-            console.log('Component mounted.')
+            console.log('Chat mounted.')
         }
     }
 </script>

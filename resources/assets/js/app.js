@@ -24,9 +24,29 @@ const app = new Vue({
 
             if(this.message != 0){
                 this.chat.message.push(this.message);
+                
+                axios.post('/send', {
+                    message: this.message,
+                  })
+                  .then(function (response) {
+                    console.log(response);
+                  })
+                  .catch(function (error) {
+                    console.log(error);
+                  });
+
                 this.message = ''
             }
             
         }
+    },
+    mounted(){
+        Echo.private('comment')
+            .listen('CommentEvent', (e) =>{
+                this.chat.message.push(e.message);
+                
+                console.log(e)
+        
+            })
     }
 });

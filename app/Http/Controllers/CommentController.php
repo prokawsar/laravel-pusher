@@ -19,15 +19,15 @@ class CommentController extends Controller
         return view('chat');
     }
 
-    // public function send(request $request){
-    //     $user = User::find(Auth::id());
-    //     event(new event($request->message, $user));
-    // }
-
-    public function send()
-    {
-        $message = 'Testing Pusher';
+    public function send(request $request){
         $user = User::find(Auth::id());
-        event(new CommentEvent($message, $user));
+        event(new CommentEvent($request->message, $user));
     }
+
+    // public function send()
+    // {
+    //     $message = 'Testing Pusher';
+    //     $user = User::find(Auth::id());
+    //     event(new CommentEvent($message, $user));
+    // }
 }
